@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #fff; 
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .deloader {
+    animation: turbine 2.5s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+
+@keyframes turbine {
+    0% {
+     transform: rotate(360deg);
+    }
+} 
+
+.deloader span {
+    position: absolute;
+    display: block;
+    height: 60px;
+    width: 60px;
+    background: #ff8c00;
+    border: 1px #000 solid;
+    border-radius: 100%;
+}
+
+.deloader span:nth-child(1) {
+    background: #000;
+    transform: translate(-28px, -28px);
+    animation: left_shape 2.5s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+
+@keyframes left_shape {
+    40% {
+      transform: scale(0.4);
+    }
+}
+
+.deloader span:nth-child(2) {
+    background: #000;
+    transform: translate(28px, -28px);
+    animation: right_shape 2.5s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+
+@keyframes right_shape {
+    60% {
+        transform: scale(0.4);
+    }
+}
+
+
+.deloader span:nth-child(3) {
+    position: relative;
+    border-radius: 0%;
+    transform: scale(1.15) rotate(-45deg);
+    animation: bottom_shape 2.5s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+
+@keyframes bottom_shape {
+    50% {
+      border-radius: 100%;
+      transform: scale(0.5) rotate(-45deg);
+    }
+    100% {
+      transform: scale(0.98) rotate(-45deg);
+    }
+} 
+
+.shadow {
+    position: relative;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    height: 16px;
+    width: 64px;
+    border-radius: 50%;
+    background-color: #000;
+    border: 1px solid #000;
+    animation: le_blob 2.5s cubic-bezier(0.75, 0, 0.5, 1) infinite;
+}
+
+@keyframes le_blob {
+    50% {
+      transform: translateX(-50%) scale(0.5);
+      border-color: #f2f2f2;
+    }
+  }
